@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# This is an executable which will be called by surrounding SYLVA IT Infrastructure. You
+# can do here what is required to call your algorithm. The blueprint uses a simple bash
+# script but you can provide whatever you need to call. Don't forget to use the right 
+# shebang.
+python3 /opt/sylva-algorithm/algorithm.py

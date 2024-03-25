@@ -22,7 +22,8 @@ The following JSON schema is to be used:
 - `device`: An object with device properties:
     - `id`: The SYLVA instrument name (as listed at https://sylva.atlassian.net/wiki/x/AYAzB)
     - `serialNumber` (optional): The serial number of the device.
-- `pollen`: An array of pollen types, each represented by an object with the following properties. The key of each object is the latin pollen name in snake case; each word starting with capital letter.
+- `pollen`: An array of pollen types, each represented by an object with the following properties.
+    - `name`: The latin pollen name in snake case; each word starting with capital letter.
     - `concentration`: The concentration of the pollen type in count per cubic meter.
     - `uncertainty`: The uncertainty of classification, ranging from 0 to 1.
 

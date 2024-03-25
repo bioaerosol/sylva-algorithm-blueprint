@@ -37,17 +37,17 @@ Here's an example of the JSON structure:
     },
     "pollen": [
         {
-            "name": "abies",
+            "name": "Abies",
             "concentration": 5.9,
             "uncertainty": 0.89
         },
         {
-            "name": "betula",
+            "name": "Betula",
             "concentration": 15.9,
             "uncertainty": 0.99
         },
         {
-            "name": "olive",
+            "name": "Quercus_Ilex",
             "concentration": 13.9,
             "uncertainty": 0.4
         }

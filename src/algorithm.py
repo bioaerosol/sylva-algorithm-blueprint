@@ -26,8 +26,8 @@ example_json = {
     "end": 1638486400,
     "device": {"id": "SYLVA_DEVICE_CODE", "serial_number": "DEVICE_SERIAL_NUMBER"},
     "pollen": {
-        "alnus": {"concentration": 5.9, "uncertainty": 0.89},
-        "birch": {"concentration": 10.5, "uncertainty": 0.75},
+        {"name": "Alnus", "concentration": 5.9, "uncertainty": 0.89},
+        {"name": "Birch", "concentration": 10.5, "uncertainty": 0.75},
     },
 }
 

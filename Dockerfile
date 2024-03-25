@@ -19,3 +19,5 @@ RUN chmod a+x /bin/startAlgorithm
 # Don't forget to provide your algorithm...
 RUN mkdir /opt/sylva-algorithm -p
 COPY src/algorithm.py /opt/sylva-algorithm/algorithm.py
+
+# No need to add an entry point here as this specification will be wrapped by SYLVA

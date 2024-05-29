@@ -25,10 +25,10 @@ example_json = {
     "start": 1638400000,
     "end": 1638486400,
     "device": {"id": "SYLVA_DEVICE_CODE", "serial_number": "DEVICE_SERIAL_NUMBER"},
-    "pollen": {
+    "pollen": [
         {"name": "Alnus", "concentration": 5.9, "uncertainty": 0.89},
         {"name": "Birch", "concentration": 10.5, "uncertainty": 0.75},
-    },
+    ],
 }
 
 # the ouput file names do not matter; only file content is relevant

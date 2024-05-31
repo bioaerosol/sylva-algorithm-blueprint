@@ -13,12 +13,13 @@ output_dir = "/data/output" # directory where your algorithm should save the out
 
 
 print("Hello, this is the SYLVA Algorithm Blueprint!")
+print("I'm not a real algorithm, but I can help you get started with your own algorithm.")
 print()
 print("This is my environment: ")
 print(f"\tInput directory: {input_dir} (holds {len(os.listdir(input_dir))} files)")
 print(f"\tOutput directory: {output_dir}")
 print()
-print("I will now generate an example JSON file and save it to the output directory.")
+print("I will now generate an example JSON file and save it to the output directory. I'll do my best but most likely the pollen concentrations will be wrong. I'm just a blueprint.")
 
 # Create the example JSON; you may want to add your algorithm here
 example_json = {
@@ -34,7 +35,8 @@ example_json = {
 # the ouput file names do not matter; only file content is relevant
 filename = str(uuid.uuid4()) + ".json"
 
-# create the output directory if it doesn't exist
+# create the output directory if it doesn't exist; remember that the algorithm is run as a non-root user;
+# thus it might be helpful to create the output directory in your Dockerfile and set the correct permissions
 os.makedirs(output_dir, exist_ok=True)
 
 # save JSON to the output folder; you can save as many files as you want, one for each device and time frame
@@ -43,3 +45,5 @@ with open(output_path, "w") as file:
     json.dump(example_json, file, indent=4)
 
 print(f"Example JSON saved to: {output_path}")
+print()
+print("I'm done! If you want to run your own algorithm, replace the code in this file with your own algorithm code.")

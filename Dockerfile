@@ -8,7 +8,9 @@ FROM ubuntu:latest
 
 # Prepare the container for the algorithm. This includes installing all necessary packages and setting 
 # up the environment.
-RUN apt-get update && apt-get install -y python3
+RUN apt-get update && apt-get install -y python3 && \
+    # As the algorithm will be executed by a non-root user, the output folder has to be writable for all
+    mkdir -p /data/output && chmod a+rx /data && chmod a+rwx /data/output
 
 # The startAlgorithm script is the entry point of the container. It is the script that will be executed 
 # when the container is run by SYLVA IT infrastructure. The script itself should just start your algorithm 

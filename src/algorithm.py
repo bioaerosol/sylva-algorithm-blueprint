@@ -6,6 +6,7 @@ import os
 import uuid
 import os
 import os
+import zipfile
 
 # The input and output directories are fixed
 input_dir = "/data/input" # read-only directory with level-0 data files
@@ -18,6 +19,22 @@ print()
 print("This is my environment: ")
 print(f"\tInput directory: {input_dir} (holds {len(os.listdir(input_dir))} files)")
 print(f"\tOutput directory: {output_dir}")
+print()
+print ("I will now iterate over the input directory. If a file is a ZIP file, I will list the first 100 files contained in the ZIP.")
+print()
+
+for file_name in os.listdir(input_dir):
+    file_path = os.path.join(input_dir, file_name)
+    
+    if file_name.endswith('.zip'):
+        with zipfile.ZipFile(file_path, 'r') as zip_ref:
+            file_list = zip_ref.namelist()[:100]
+            print()
+            print(f"Files in {file_name}:")
+            for file in file_list:
+                print(f"\t{file}")
+
+print()
 print()
 print("I will now generate an example JSON file and save it to the output directory. I'll do my best but most likely the pollen concentrations will be wrong. I'm just a blueprint.")
 

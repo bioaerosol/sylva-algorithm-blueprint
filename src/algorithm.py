@@ -39,13 +39,23 @@ print()
 print("I will now generate an example JSON file and save it to the output directory. I'll do my best but most likely the pollen concentrations will be wrong. I'm just a blueprint.")
 
 # Create the example JSON; you may want to add your algorithm here
-example_json = {
+example_json1 = {
     "start": 1638400000,
     "end": 1638486400,
     "device": {"id": "SYLVA_DEVICE_CODE", "serial_number": "DEVICE_SERIAL_NUMBER"},
     "pollen": [
         {"name": "Alnus", "concentration": 5.9, "uncertainty": 0.89},
         {"name": "Birch", "concentration": 10.5, "uncertainty": 0.75},
+    ],
+}
+
+example_json2 = {
+    "start": 1638486400,
+    "end": 1638572800,
+    "device": {"id": "SYLVA_DEVICE_CODE", "serial_number": "DEVICE_SERIAL_NUMBER"},
+    "pollen": [
+        {"name": "Alnus", "concentration": 1.2, "uncertainty": 0.5},
+        {"name": "Birch", "concentration": 7.8, "uncertainty": 0.01},
     ],
 }
 
@@ -59,7 +69,13 @@ os.makedirs(output_dir, exist_ok=True)
 # save JSON to the output folder; you can save as many files as you want, one for each device and time frame
 output_path = os.path.join(output_dir, filename)
 with open(output_path, "w") as file:
-    json.dump(example_json, file, indent=4)
+    json.dump(example_json1, file, indent=4)
+
+# save another JSON in subdirectory because you can also save files in subdirectories
+output_path = os.path.join(output_path, "somesubdir")
+os.makedirs(output_path, exist_ok=True)
+with open(output_path, "w") as file:
+    json.dump(example_json2, file, indent=4)
 
 print(f"Example JSON saved to: {output_path}")
 print()

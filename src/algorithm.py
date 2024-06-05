@@ -72,7 +72,7 @@ with open(output_path, "w") as file:
     json.dump(example_json1, file, indent=4)
 
 # save another JSON in subdirectory because you can also save files in subdirectories
-output_path = os.path.join(output_path, "somesubdir")
+output_path = os.path.join(output_dir, "somesubdir", "anotherfile.json")
 os.makedirs(output_path, exist_ok=True)
 with open(output_path, "w") as file:
     json.dump(example_json2, file, indent=4)

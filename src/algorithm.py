@@ -59,27 +59,28 @@ example_json2 = {
     ],
 }
 
-# the ouput file names do not matter; only file content is relevant
-filename = str(uuid.uuid4()) + ".json"
-
 # create the output directory if it doesn't exist; remember that the algorithm is run as a non-root user;
 # thus it might be helpful to create the output directory in your Dockerfile and set the correct permissions
 os.makedirs(output_dir, exist_ok=True)
 
 # save JSON to the output folder; you can save as many files as you want, one for each device and time frame
-output_path = os.path.join(output_dir, filename)
+output_path = os.path.join(output_dir, str(uuid.uuid4()) + ".json")
 with open(output_path, "w") as file:
     json.dump(example_json1, file, indent=4)
+
+print(f"Example JSON #1 saved to: {output_path}")
+print()
 
 # save another JSON in subdirectory because you can also save files in subdirectories
 output_path = os.path.join(output_dir, "somesubdir")
 os.makedirs(output_path, exist_ok=True)
 
-output_path = os.path.join(output_path, "anotherfile.json")
-
+output_path = os.path.join(output_path, str(uuid.uuid4()) + ".json")
 with open(output_path, "w") as file:
     json.dump(example_json2, file, indent=4)
 
-print(f"Example JSON saved to: {output_path}")
+print(f"Example JSON #2 saved to: {output_path}")
+
 print()
 print("I'm done! If you want to run your own algorithm, replace the code in this file with your own algorithm code.")
+print()

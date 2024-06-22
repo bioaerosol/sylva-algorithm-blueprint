@@ -11,12 +11,12 @@ An algorithm can be developed in any way as long as it runs in an OCI compliant 
 To make this work, the Image Specification must define an image that:
 
 -   must contain the algorithm
--   must contain a command “startAlgorithm” which starts the algorithm
+-   must contain a command “startAlgorithm” which starts the algorithm and exits with return code 0 in case of success and any other return code in case of an error
 -   must be prepared to run with any OS user but not root
 -   must read requested raw data files from "/data/input" directory which is a read-only directory and must exist in container
 -   must store the algorithm’s output to "/data/ouput" following the specification
--   may add other files to "/data/output" which are made available together with algorithm's result
 -   must be designed to run stateless as each container is destroyed after having been run
+-   may add other files to "/data/output" which are made available together with algorithm's result
 -   may log any output to console in order to make it available for further analysis
 
 # Algorithm Input
